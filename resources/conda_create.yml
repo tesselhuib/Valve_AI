@@ -1,0 +1,33 @@
+name: VALVE_AI
+channels:
+  - anaconda
+  - conda-forge
+  - bioconda
+  - pytorch
+dependencies:
+  - python>=3.12
+  - pytorch>=2.4.1
+  - torchvision>=0.19.1
+  - pdf2image>=1.17.0
+  - poppler>=22.12
+  - matplotlib>=3.9.2
+  - pip
+  - pandas>=2.1.1
+  - numpy>=1.26
+  - scipy>=1.7
+  - pydicom>=2.0
+  - pytest>=6
+  - pytest-mock>=3.0
+  - pytest-dependency>=0.5
+  - bump2version>=1.*
+  - jupyter
+  - openpyxl>=3.1.5
+  - xgboost>=2.1.1
+  - scikit-learn>=1.5.1
+  - tqdm>=4.66
+  - lxml>=5.3
+
+
+
+
+
