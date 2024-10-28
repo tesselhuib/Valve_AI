@@ -4,7 +4,7 @@
 import os
 import sys
 
-# To find ecgprocess, can also install ecgprocess as package, then remove this
+# This is to find ecgprocess, you can also install ecgprocess as package, then remove this
 sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), "..")))
 
 from ecgProcess.constants import ProcessDicomNames as PDNames
