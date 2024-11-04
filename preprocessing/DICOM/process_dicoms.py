@@ -1,15 +1,14 @@
-'''
-A module to extract median beats and raw waveforms from DICOM ECGs wrapping
+"""A module to extract median beats and raw waveforms from DICOM ECGs wrapping
 pydicom.
-'''
 
-# %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-# imports
+Largly copied from: https://gitlab.com/SchmidtAF/ECGProcess/
+"""
+
 import os
 import re
 import sys
 
-# To find ecgprocess, can also install ecgprocess as package, then remove this
+# To find ecgProcess
 sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), '..')))
 
 import copy

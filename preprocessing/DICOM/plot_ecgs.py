@@ -1,19 +1,15 @@
-'''
-Tools to plot ECG signals.
+"""Tools to plot ECG signals.
 
 The primary aim is not to make nice ECG visuals but to create input data for
 image analysis.
 
-The code heavily borrows from the following brilliant github
-`repository <https://github.com/marcodebe/dicom-ecg-plot>`_.
-'''
+Largly copied from: https://gitlab.com/SchmidtAF/ECGProcess/
+"""
 
-# %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-# imports
 import os
 import sys
 
-# To find ecgprocess, can also install ecgprocess as package, then remove this
+# To find ecgProcess
 sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), '..')))
 
 import warnings

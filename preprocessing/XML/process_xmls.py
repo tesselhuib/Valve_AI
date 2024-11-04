@@ -1,3 +1,6 @@
+"""Script to extract median beats and raw waveforms form XML ECGs.
+Largly copied from: https://gitlab.com/SchmidtAF/ECGProcess/ """
+
 import os
 import sys
 import re
@@ -6,7 +9,6 @@ import pathlib
 import pandas as pd
 import numpy as np
 import matplotlib.pylab as plt
-
 from tqdm import tqdm
 from lxml import etree
 from scipy import signal
@@ -14,7 +16,7 @@ from typing import (
     List, Self, Dict, Optional, Any, Literal,
 )
 
-# To find ecgprocess, can also install ecgprocess as package, then remove this
+# To find ecgProcess
 sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), '..')))
 
 from ecgProcess.constants import (ProcessDicomNames as PDNames)
@@ -399,7 +401,7 @@ class ECGXMLTable(object):
         return long_table
     
     def write_pdf(self, ecgdrawing: ECGDrawing,
-                  target_path: str = '.', write_failed: bool = True,
+                  target_path: str = '.', write_failed: bool = False,
                   kwargs_reader: Dict[Any, Any] | None = None,
                   kwargs_drawing: Dict[Any, Any] | None = None,
                   kwargs_savefig: Dict[Any, Any] | None = None,
@@ -414,7 +416,7 @@ class ECGXMLTable(object):
             An instance of the ECGDrawing data class.
         target_path : `str`, default '.'
             The full path where the pdfs should be written to.
-        write_failed : `bool`, default `True`
+        write_failed : `bool`, default `False`
             Whether to write a text file to disk containing the failed file
             names.
         kwargs_*: dict [`any`, `any`], default `NoneType`
@@ -578,7 +580,7 @@ class ECGXMLTable(object):
         return no_data_list, key_list, ecg_inst
 
     def write_numpy(self, ecgdrawing: ECGDrawing,
-                    target_path: str = '.', write_failed: bool = True,
+                    target_path: str = '.', write_failed: bool = False,
                     kwargs_reader: Dict[Any, Any] | None = None,
                     kwargs_drawing: Dict[Any, Any] | None = None,
                     kwargs_savefig: Dict[Any, Any] | None = None,
@@ -593,7 +595,7 @@ class ECGXMLTable(object):
             An instance of the ECGDrawing data class.
         target_path : `str`, default '.'
             The full path where the npzs should be written to.
-        write_failed : `bool`, default `True`
+        write_failed : `bool`, default `False`
             Whether to write a text file to disk containing the failed file
             names.
         kwargs_*: dict [`any`, `any`], default `NoneType`

@@ -1,7 +1,12 @@
+"""Tools to plot ECG signals.
+
+The primary aim is not to make nice ECG visuals but to create input data for
+image analysis.
+
+Largly copied from: https://gitlab.com/SchmidtAF/ECGProcess/
+"""
 import os
 import sys
-# To find ecgprocess, can also install ecgprocess as package, then remove this
-sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), '..')))
 import warnings
 import numpy as np
 import pandas as pd
@@ -9,6 +14,10 @@ import matplotlib.pyplot as plt
 from typing import (
     Callable, Literal, Self, Any,
 )
+
+# To find ecgProcess
+sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), '..')))
+
 from ecgProcess.errors import (
     NotCalledError,
     is_type,

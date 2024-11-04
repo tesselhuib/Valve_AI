@@ -1,12 +1,11 @@
-""" Converting AUMC DICOMs to NPZ or PDF.
+"""Converting Amsterdam UMC DICOMs to NPZ or PDF.
 Deals with the directory structure as found in testData/DICOM, as this is how AUMC provides the DICOM data.
-
 """
 
 import os
 import sys
 
-# To find ecgprocess, can also install ecgprocess as package, then remove this
+# To find ecgProcess
 sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), "..")))
 
 from ecgProcess.constants import ProcessDicomNames as PDNames
@@ -50,7 +49,7 @@ UPDATE_KEYS = {
 
 kwargs_drawing = {PDNames.PLOT_LAYOUT: LAYOUT}
 
-
+# Define convert_dicom() based on what output file is requested
 if TARGET_FILETYPE == "npz":
 
     def convert_dicom(dicom_file, target_path):
@@ -85,6 +84,7 @@ else:
     )
 
 
+# Function to convert and save DICOM files
 def convert_and_save_dicom(study_dir, result_dir):
     for root, _, files in os.walk(study_dir):
         for file in files:

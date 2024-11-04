@@ -1,10 +1,9 @@
-""" Example usage of how to convert ECGs saved in xml to pdf or npz.
-"""
+"""Example usage of how to convert ECGs saved in xml to pdf or npz."""
 
 import os
 import sys
 
-# To find ecgprocess, can also install ecgprocess as package, then remove this
+# To find ecgProcess
 sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), "..")))
 
 from ecgProcess.constants import ProcessDicomNames as PDNames
@@ -33,7 +32,7 @@ kwargs_drawing = {PDNames.PLOT_LAYOUT: LAYOUT}
 filepaths = [os.path.join(DIRECTORY, filename) for filename in os.listdir(DIRECTORY)]
 filepaths.sort()
 
-# Process the xmls and write them to npz using a ECGXMLTable instance
+# Process the xmls and write them to npz or pdf using a ECGXMLTable instance
 ecgxmlreader = ECGXMLReader()
 ecgtable = ECGXMLTable(ecgxmlreader=ecgxmlreader, path_list=filepaths)()
 
