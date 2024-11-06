@@ -21,11 +21,11 @@ python train.py
 
 The model will start training now and print the training and validation loss each epoch. The best model will be saved in 'best_model/' with a datetime stamp in the filename. If VISUALIZE_RECONSTRUCTION is set to TRUE, a reconstruction plot will be created and saved in 'reconstructions/' also including a datetime stamp in the filename.
 
-### Visualizing reconstruction
-If you already have a pretrained model and want to plot some inputs alongside their reconstructed counterparts, you can use 'visualize_saved_model.py'. Define the path to the pretrained model (BEST_MODEL) in config.py and change line 113 in 'models/vae.py', epsilon = torch.randn_like(std).to(self.device) to epsilon = torch.randn_like(std).to('cpu') and run:
+### Optional: Visualizing reconstruction
+If you already have a pretrained model and want to plot some inputs alongside their reconstructed counterparts, you can use 'visualize_saved_model.py'. Define the path to the pretrained model (BEST_MODEL) in config.py and change line 113 in 'models/vae.py', "epsilon = torch.randn_like(std).to(self.device)" , to "epsilon = torch.randn_like(std).to('cpu')" and run:
 
 ```sh
 python visualize_saved_model.py
 ```
 
-This will generate a reconstruction plot and save it in reconstructions/. It uses the function defined in visualize.py and thus this is where you can change any plot features.
+This will generate a reconstruction plot and save it in 'reconstructions/'. It uses the function defined in visualize.py and thus this is where you can change any plot features.

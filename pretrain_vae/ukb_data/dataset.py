@@ -29,18 +29,6 @@ class ECGDataset(Dataset):
 
     """
 
-    npz_dir = None
-    """Directory with npz files to be used (`str`).
-    """
-
-    transform = None
-    """Torch transformation pipeline to be applied on input data (callable).
-    """
-
-    npz_files = None
-    """List of ECG npz filepaths (`list` of `str`).
-    """
-
     def __init__(self, npz_dir, transform):
         self.npz_dir = npz_dir
         self.transform = transform

@@ -1,15 +1,11 @@
 """
-Script to organize NPZ files into training, validation, and test directories.
-
-This script reads NPZ files from a specified directory, splits them into
-training, validation, and test sets according to specified ratios, and copies
-them to their respective output directories. It also clears any existing files
-in these directories before copying new ones.
+Script to organize UK Biobank NPZ files into training, validation, and test
+directories.
 
 Attributes
 ----------
-NPZ_DIR : `str`
-    The directory containing the NPZ files to be organized.
+UKB_NPZ_DIR : `str`
+    The directory containing the UK Biobank NPZ files to be organized.
 TRAIN_DIR : `str`
     The directory where the training NPZ files will be copied.
 VAL_DIR : `str`
@@ -24,24 +20,13 @@ NUMBER_OF_FILES_TO_USE : `int`, optional
     The maximum number of NPZ files to use from the NPZ directory. If None,
     all files will be used.
 
-Functions
----------
-is_empty(directory)
-    Check if a directory is empty.
-
-clear_directory(directory)
-    Clear the contents of a directory, recreating it if it exists.
-
-copy_files(file_list, target_dir)
-    Copy a list of files to a target directory.
-
-main()
-    Main function to organize NPZ files into training, validation, and test
-    directories.
-
 Notes
 -----
-All the attributes are expected to be loaded in from a global 'config.py' file.
+This script reads NPZ files from a specified directory, splits them into
+training, validation, and test sets according to specified ratios, and copies
+them to their respective output directories. It also clears any existing files
+in these directories before copying new ones. All the attributes are expected
+to be loaded in from a global 'config.py' file.
 """
 
 import os
@@ -52,7 +37,7 @@ import glob
 import random
 import shutil
 from config import (
-    NPZ_DIR,
+    UKB_NPZ_DIR,
     TRAIN_DIR,
     VAL_DIR,
     TEST_DIR,
@@ -124,7 +109,7 @@ def main():
             clear_directory(directory)
 
     # Get list of NPZ files
-    npz_files = glob.glob(os.path.join(NPZ_DIR, "*.npz"))
+    npz_files = glob.glob(os.path.join(UKB_NPZ_DIR, "*.npz"))
 
     # Shuffle the list of NPZs
     if NUMBER_OF_FILES_TO_USE is not None:

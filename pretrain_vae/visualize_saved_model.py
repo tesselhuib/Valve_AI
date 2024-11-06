@@ -20,8 +20,8 @@ the script's directory, with filenames that include timestamps.
 """
 
 import torch
-from data.dataset import ECGDataset
-from data.utils import get_transform
+from ukb_data.dataset import ECGDataset
+from ukb_data.utils import get_transform
 from torch.utils.data import DataLoader
 from visualize import visualize_reconstruction
 from config import DEVICE, VAL_DIR, BEST_MODEL

@@ -33,8 +33,8 @@ from torch.utils.data import DataLoader
 from datetime import datetime
 
 from models.vae import VAE
-from data.dataset import ECGDataset
-from data.utils import get_transform
+from ukb_data.dataset import ECGDataset
+from ukb_data.utils import get_transform
 from visualize import visualize_reconstruction
 from config import (
     BATCH_SIZE,

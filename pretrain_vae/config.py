@@ -1,10 +1,10 @@
 import torch
 
-# Data paths
-NPZ_DIR = 'ukbiobank_npz_without_movement_artefacts/'
-TRAIN_DIR = 'VAE_npz/data/datasets/train_set/'
-VAL_DIR = 'VAE_npz/data/datasets/val_set/'
-TEST_DIR = 'VAE_npz/data/datasets/test_set/'
+# Data paths - CHANGE ACCORDING TO YOUR FILE PATHS
+UKB_NPZ_DIR = 'ukbiobank_npzs/'
+TRAIN_DIR = 'pretrain_vae/ukb_data/datasets/train_set/'
+VAL_DIR = 'pretrain_vae/ukb_data/datasets/val_set/'
+TEST_DIR = 'pretrain_vae/ukb_data/datasets/test_set/'
 
 NUMBER_OF_FILES_TO_USE = 30000  # Set to None for all files
 
@@ -22,4 +22,4 @@ VISUALIZE_RECONSTRUCTION = True
 DEVICE = 'cuda' if torch.cuda.is_available() else 'cpu'
 
 # Path to best trained model
-BEST_MODEL = "best_model/best_full_model_2024-10-12_032831.pt"
+BEST_MODEL = "pretrain_vae/best_model/best_full_model_2024-10-12_032831.pt"
