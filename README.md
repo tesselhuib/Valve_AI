@@ -1,5 +1,5 @@
 # Valve_AI
-This repository contains all code written for my 3 month internship at Amsterdam Center for Computational Cardiology. The report related to the internship can be found in the repository as well as: `internship_report.pdf`. The goal of the project was to detect valvular heart disease on ECG.
+This repository contains all code written for a 3 month internship project. For more information, the report related to the internship can be found in the repository as well as: `internship_report.pdf`. The goal of the project was to detect valvular heart disease on ECG.
 
 ### Conda environment
 
