@@ -12,7 +12,7 @@ LABELS_XLSX_PATH = 'sleutel_EDLVHD_20240906.xlsx'
 TRAIN_SPLIT = 0.8
 VAL_SPLIT = 0.1  # test split is whatever is left, so about 10%.
 
-PRETRAINED_MODEL = 'pretrain_vae/best_model/best_full_model_2024-10-12_032831.pt'
+PRETRAINED_MODEL = 'pretrain_vae/best_model/best_full_model_2024-10-12_032831.pt' # Download from huggingface!
 
 TRAIN_LABELS = 'embedding_classifier/aumc_data/datasets/train_set/train_labels.csv'
 VAL_LABELS = 'embedding_classifier/aumc_data/datasets/val_set/val_labels.csv'

@@ -15,3 +15,6 @@ The `XML/` directory contains the code to convert XML to PDF or to NPZ. For the 
 The main modification is in the __call__() function of the ECGXMLReader() class to process XML instead of DICOM. Here, we also included the subtraction of the mean for each ECG lead trace to ensure a zero mean baseline for each ECG lead. Next to that the same modifications as noted above for the `DICOM/` folder were included as well.
 
 The way the code was used for this internship project can be found in `XML/example_usage.py`.
+
+### Exclude ECGs recorded after a valvular intervention
+As explained in the report, DICOMs of ECGs recorded after valvular intervention were excluded. The code to find these ECGs can be found in `exclude_interventionECG.py`. This creates `excluded_npz_paths.txt`, which contains the paths to the NPZs that should be excluded due to this reason. If wanted, these can be deleted from the NPZ directory.
